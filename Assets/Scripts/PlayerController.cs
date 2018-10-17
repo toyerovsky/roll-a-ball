@@ -22,5 +22,14 @@ namespace Assets.Scripts
 
             _rigidbody.AddForce(movement * Speed);
         }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Collectable"))
+            {
+                GetComponent<ScoreController>().SetCountText();
+                other.gameObject.SetActive(false);
+            }
+        }
     }
 }
