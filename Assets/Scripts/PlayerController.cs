@@ -6,11 +6,11 @@ namespace Assets.Scripts
     {
         public float Speed;
 
-        private Rigidbody rigidbody;
+        private Rigidbody _rigidbody;
 
         public void Start()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            _rigidbody = GetComponent<Rigidbody>();
         }
 
         public void FixedUpdate()
@@ -20,7 +20,7 @@ namespace Assets.Scripts
 
             Vector3 movement = new Vector3(horizontalAxis, 0, verticalAxis);
 
-            rigidbody.AddForce(movement * Speed);
+            _rigidbody.AddForce(movement * Speed);
         }
     }
 }
